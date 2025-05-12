@@ -1,0 +1,557 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
+
+#l1 {
+    position: absolute;
+    margin-top: 0px;
+    padding: 0px;
+    top: 10px;
+    left: 0px;
+    width: 300px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+h2{
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+#game-over{
+    background-color: #282c35af;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    place-items: center;
+    display: grid;
+}
+#game-over div{
+    background-color: rgba(0, 0, 0, 0.749);
+    top: 50%;
+    width: 50%;
+    height: 600px;
+    border-radius: 30px;
+    place-items: center;
+    text-align: center;
+    
+}
+#game-over div h3{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    font-weight: lighter;
+    
+}
+#splash h3{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    position: absolute;
+    margin-bottom: 200px;
+ 
+    font-weight: lighter;
+    text-shadow: 0px 0px 12px white;
+}
+#splash button {
+    background-color: rgb(0, 219, 0);
+    color: #282c35;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border-radius: 10px; 
+
+}
+#splash button:hover{
+    box-shadow: 0 0 8px #39ff14,
+    0 0 16px #39ff14;
+    
+    transform: scale(1.05);
+}
+#splash {
+    background-color: #00000090;
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: grid;
+    place-items: center;
+}
+#pause {
+    background-color: rgb(0, 219, 0);
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    z-index: 1;
+    border-radius: 25px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+}
+
+#pause:hover{
+    box-shadow: 0 0 8px green,
+    0 0 10px #39ff14;
+    
+    transform: scale(1.05);
+}
+#reset {
+    background-color: rgb(0, 219, 0);
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 700px;
+    z-index: 1;
+    border-radius: 25px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    place-content: center;
+}
+#reset:hover{
+    box-shadow: 0 0 8px green,
+    0 0 10px #39ff14;
+    
+    transform: scale(1.05);
+}
+#reset h2{
+    color: #282c35;
+    font-size: 40px;
+    margin-top: -6px;
+    
+}
+#ov-timer{
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    text-shadow: 0px 0px 7px ;
+    
+}
+#ply-timer {
+    margin-top: 600px;
+    font-size: 30px;
+    /* position: absolute; */
+    /* color: #01a121; */
+    font-weight: bold;
+    /* text-shadow: 0px 0px 12px #01a121; */
+}
+#l2 {
+    position: absolute;
+    margin-left: 0px;
+    transform: rotate(120deg);
+    padding: 0px;
+    top: 229.5px;
+    left: 0px;
+    width: 300px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#l2 div{
+    transform: rotate(-120deg);
+    margin-left: -10px;
+    margin-top: -40px;
+}
+#l3 {
+    position: absolute;
+    margin-left: 0px;
+    transform: rotate(60deg);
+    padding: 0px;
+    top: 229.5px;
+    left: 0px;
+    width: 300px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#l3 div{
+    transform: rotate(-60deg);
+}
+#l4 {
+    position: absolute;
+    margin-left: 0px;
+    transform: rotate(60deg);
+    padding: 0px;
+    top: 489px;
+    left: 0px;
+    width: 300px;
+    background: white;
+    height: 2px;
+    border: 0px;
+}
+#l4 div{
+    transform: rotate(-60deg);
+    margin-left: 15px;
+    margin-top: -40px;
+}
+#l5 {
+    position: absolute;
+    margin-left: 0px;
+    transform: rotate(120deg);
+    padding: 0px;
+    top: 489px;
+    left: 0px;
+    width: 300px;
+    background: white;
+    height: 2px;
+    border: 0px;
+}
+#l5 div {
+    transform: rotate(-120deg);
+}
+#l6 {
+    position: absolute;
+    margin-left: 0px;
+    padding: 0px;
+    top: 618px;
+    left: 0px;
+    width: 300px;
+    background: white;
+    height: 2px;
+    border: 0px;
+} 
+#l6 div {
+    margin-top: -40px;
+}
+#lb1 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 186px;
+    left: 0px;
+    width: 200px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#lb2 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    transform: rotate(120deg);
+    top: 273px;
+    left: 0px;
+    width: 200px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#lb2 div {
+    transform: rotate(-120deg);
+    margin-left: -10px;
+    margin-top: -40px;
+}
+#lb3 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    transform: rotate(60deg);
+    top: 273px;
+    left: 0px;
+    width: 200px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#lb3 div {
+    transform: rotate(-60deg);
+}
+
+#lb4 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    transform: rotate(60deg);
+    top: 445.5px;
+    left: 0px;
+    width: 200px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#lb4 div{
+    transform: rotate(-60deg);
+    margin-left: 15px;
+    margin-top: -40px;
+}
+#lb5 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    transform: rotate(120deg);
+    top: 445.5px;
+    left: 0px;
+    width: 200px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#lb5 div{
+    transform: rotate(-120deg);
+}
+#lb6 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 531.5px;
+    left: 0px;
+    width: 200px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#lb6 div {
+    margin-top: -40px;
+}
+
+#lc1 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 273px;
+    width: 100px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+
+#lc2 {
+    position: absolute;
+    margin: 0px;
+    transform: rotate(120deg);
+    padding: 0px;
+    top: 316px;
+    left: 210px;
+    width: 100px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#lc2 div {
+    transform: rotate(-120deg);
+    margin-left: 0px;
+    margin-top: -40px;
+}
+
+#lc3 {
+    position: absolute;
+    margin: 0px;
+    transform: rotate(60deg);
+    padding: 0px;
+    top: 316px;
+    left: 210px;
+    width: 100px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#lc3 div {
+    transform: rotate(-60deg);
+}
+#lc4 {
+    position: absolute;
+    margin: 0px;
+    transform: rotate(60deg);
+    padding: 0px;
+    top: 402px;
+    left: 210px;
+    width: 100px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#lc4 div{
+    transform: rotate(-60deg);
+    margin-left: 0px;
+    margin-top: -45px;
+}
+#lc5 {
+    position: absolute;
+    margin: 0px;
+    transform: rotate(120deg);
+    padding: 0px;
+    top: 402px;
+    left: 210px;
+    width: 100px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#lc5 div{
+    transform: rotate(-120deg);
+}
+#lc6 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 445px;
+    width: 100px;
+    background: white;
+    height: 2px;
+    border: 0px;
+}
+#lc6 div{
+    margin-top: -40px;
+}
+
+#h1 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 359px;
+    left: 136px;
+    width: 100px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#h1 div {
+    margin-top: -40px;
+}
+
+#h2 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    transform: rotate(-60deg);
+    top: 144px;
+    left: 236px;
+    width: 100px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#h2 div {
+    transform: rotate(60deg);
+    /* margin-left: -40px; */
+    /* margin-top: -40px; */
+}
+
+#h3 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    transform: rotate(-120deg);
+    top: 574px;
+    left: 236px;
+    width: 100px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#h3 div {
+    transform: rotate(120deg);
+    /* margin-left: -40px; */
+    margin-top: -40px;
+}
+
+#h4 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 359px;
+    left: 136px;
+    width: 100px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+
+#h5 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    transform: rotate(-60deg);
+    top: 489px;
+    left: 236px;
+    width: 100px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#h5 div {
+    transform: rotate(60deg);
+    /* margin-left: -40px; */
+    margin-top: -40px;
+}
+
+#h6 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    transform: rotate(-120deg);
+    top: 230px;
+    left: 236px;
+    width: 100px;
+    background: white;;
+    height: 2px;
+    border: 0px;
+}
+#h6 div {
+    transform: rotate(120deg);
+}
+div.circle{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: -7.5px;
+    left: -7.5px;
+    border-radius: 25px;
+    width: 25px;
+    height: 25px;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: rgb(142, 142, 142);
+    border-color: white;
+
+}
+/* div.circle:hover{
+    cursor: pointer;
+    background-color: rgba(0, 187, 255);
+    box-shadow:0px 0px 10px 2px rgba(0, 187, 255, 0.821);
+} */
+h1 {
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #282c35;
+    width: 250px;
+    background-color: rgb(0, 192, 0);
+    box-shadow: 0px 0px 10px 2px green;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+body {
+    margin-top: 0px;
+    padding: 0px;
+    background-color: #282c35;
+}
+
+#container{
+    top: 100px;
+}
