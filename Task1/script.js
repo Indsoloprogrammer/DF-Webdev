@@ -50,6 +50,7 @@ const c18 = document.getElementById("c18")
 const countdown = document.getElementById("ov-timer")
 const single_timer = document.getElementById("ply-timer")
 const pause_btn = document.getElementById("pause");
+
 const reset_btn = document.getElementById("reset");
 const pause_div = document.getElementById("splash");
 const res_btn = document.getElementById("res_btn");
@@ -63,319 +64,7 @@ const places =[c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18];
 const edges = [l1,l2,l3,l4,l5,l6, lb1,lb2,lb3,lb4,lb5,lb6,lc1,lc2,lc3,lc4,lc5,lc6,h1,h2,h3,h4,h5,h6];
 //#endregion
 //#region
-if (document.documentElement.clientWidth < 1200){
-    countdown.style['font-size'] = "50px";
-    green_score_text.style['position'] = 'absolute';
-    red_score_text.style['position'] = 'relative';
-    single_timer.style['position'] = 'absolute';
-    pause_btn.getElementsByTagName("h2")[0].style['margin-top'] = "12px";
-    pause_btn.getElementsByTagName("h2")[0].style['margin-left'] = "-2px";
-    reset_btn.getElementsByTagName("h2")[0].style['margin-top'] = "-8px";
-    reset_btn.getElementsByTagName("h2")[0].style['margin-left'] = "3px";
-    for (let i=0; i<edges.length; i++){
-        edges[i].getElementsByTagName("h2")[0].style['font-size'] = "17px";
-    }
-    l2.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-    l2.getElementsByTagName("div")[0].style['margin-right'] = "-10px"
-    l4.getElementsByTagName("div")[0].style['margin-top'] = "-30px"
-    l4.getElementsByTagName("div")[0].style['margin-left'] = "5px"
-    l6.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
 
-    lb2.getElementsByTagName("div")[0].style['margin-left'] = "-10px"
-    lb2.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-    lb4.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-    lb4.getElementsByTagName("div")[0].style['margin-left'] = "15px"
-    lb6.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-
-    lc2.getElementsByTagName("div")[0].style['margin-left'] = "0px"
-    lc2.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-    lc4.getElementsByTagName("div")[0].style['margin-top'] = "-45px"
-    lc4.getElementsByTagName("div")[0].style['margin-left'] = "0px"
-    lc6.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-
-    h1.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-    h3.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-    h5.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-
-
-
-    l1.style['width'] = "150px"
-    l2.style['width'] = "150px"
-    l3.style['width'] = "150px"
-    l4.style['width'] = "150px"
-    l5.style['width'] = "150px"
-    l6.style['width'] = "150px"
-    lb1.style['width'] = "100px"
-    lb2.style['width'] = "100px"
-    lb3.style['width'] = "100px"
-    lb4.style['width'] = "100px"
-    lb5.style['width'] = "100px"
-    lb6.style['width'] = "100px"
-    lc1.style['width'] = "50px"
-    lc2.style['width'] = "50px"
-    lc3.style['width'] = "50px"
-    lc4.style['width'] = "50px"
-    lc5.style['width'] = "50px"
-    lc6.style['width'] = "50px"
-    h1.style['width'] = "50px"
-    h2.style['width'] = "50px"
-    h3.style['width'] = "50px"
-    h4.style['width'] = "50px"
-    h5.style['width'] = "50px"
-    h6.style['width'] = "50px"
-    for (let i =0; i<places.length; i++){
-        places[i].style['width'] = "12.5px";
-        places[i].style['height'] = "12.5px"
-    }
- 
-
-    c1.style.top = "143px"
-    c2.style.top = "143px"
-    c3.style.top = "273px"
-    c4.style.top = "402px"
-    c5.style.top = "402px"
-    c6.style.top = "273px"
-    
-    c7.style.top = "188px"
-    c8.style.top = "188px"
-    c9.style.top = "273px"
-    c10.style.top = "358px"
-    c11.style.top = "358px"
-    c12.style.top = "273px"
-
-    c13.style.top = "231px"
-    c14.style.top = "231px"
-    c15.style.top = "273px"
-    c16.style.top = "315px"
-    c17.style.top = "315px"
-    c18.style.top = "273px"
-
-    l1.style.top = "150px"
-    l2.style.top = "215px"
-    l3.style.top = "215px"
-    l4.style.top = "345px"
-    l5.style.top = "345px"
-    l6.style.top = "410px"
-
-    lb1.style.top = "195px"
-    lb2.style.top = "239px"
-    lb3.style.top = "239px"
-    lb4.style.top = "325px"
-    lb5.style.top = "325px"
-    lb6.style.top = "368px"
-
-    lc1.style.top = "238px"
-    lc2.style.top = "260px"
-    lc3.style.top = "260px"
-    lc4.style.top = "303px"
-    lc5.style.top = "303px"
-    lc6.style.top = "325px"
-
-    h1.style.top = "281px"
-    h2.style.top = "174px"
-    h3.style.top = "389px"
-    h4.style.top = "281px"
-    h5.style.top = "347px"
-    h6.style.top = "216px"
-
-    c1.style.left = document.documentElement.clientWidth/2 - 82 + 'px'
-    c2.style.left = document.documentElement.clientWidth/2 + 66 + 'px'
-    c3.style.left = document.documentElement.clientWidth/2 + 137 + 'px'
-    c4.style.left = document.documentElement.clientWidth/2 + 67 + 'px'
-    c5.style.left = document.documentElement.clientWidth/2 - 82 + 'px'
-    c6.style.left = document.documentElement.clientWidth/2 - 157 + 'px'
-
-    c7.style.left = document.documentElement.clientWidth/2 - 56 + 'px'
-    c8.style.left = document.documentElement.clientWidth/2 + 42 + 'px'
-    c9.style.left = document.documentElement.clientWidth/2 + 88 + 'px'
-    c10.style.left = document.documentElement.clientWidth/2 + 43 + 'px'
-    c11.style.left = document.documentElement.clientWidth/2 - 57 + 'px'
-    c12.style.left = document.documentElement.clientWidth/2 - 104 + 'px'
-
-    c13.style.left = document.documentElement.clientWidth/2 - 32 + 'px'
-    c14.style.left = document.documentElement.clientWidth/2 + 17 + 'px'
-    c15.style.left = document.documentElement.clientWidth/2 + 37 + 'px'
-    c16.style.left = document.documentElement.clientWidth/2 + 18 + 'px'
-    c17.style.left = document.documentElement.clientWidth/2 - 32 + 'px'
-    c18.style.left = document.documentElement.clientWidth/2 - 55 + 'px'
-
-    l1.style.left = document.documentElement.clientWidth/2 -75 + 'px';
-    l2.style.left = document.documentElement.clientWidth/2 -187 + 'px';
-    l3.style.left = document.documentElement.clientWidth/2 +37 + 'px';
-    l4.style.left = document.documentElement.clientWidth/2 -187 + 'px';
-    l5.style.left = document.documentElement.clientWidth/2 +37 + 'px';
-    l6.style.left = document.documentElement.clientWidth/2 -75 + 'px';
-
-    lb1.style.left = document.documentElement.clientWidth/2 -50 + 'px';
-    lb2.style.left = document.documentElement.clientWidth/2 -125 + 'px';
-    lb3.style.left = document.documentElement.clientWidth/2 + 25 + 'px';
-    lb4.style.left = document.documentElement.clientWidth/2 -125 + 'px';
-    lb5.style.left = document.documentElement.clientWidth/2 + 25 + 'px';
-    lb6.style.left = document.documentElement.clientWidth/2 -50 + 'px';
-
-    lc1.style.left = document.documentElement.clientWidth/2 -25 + 'px';
-    lc2.style.left = document.documentElement.clientWidth/2 -62 + 'px';
-    lc3.style.left = document.documentElement.clientWidth/2 + 12 + 'px';
-    lc4.style.left = document.documentElement.clientWidth/2 -62 + 'px';
-    lc5.style.left = document.documentElement.clientWidth/2 + 12 + 'px';
-    lc6.style.left = document.documentElement.clientWidth/2 -25 + 'px';
-
-    h1.style.left = document.documentElement.clientWidth/2 -150 + 'px';
-    h2.style.left = document.documentElement.clientWidth/2 +37 + 'px';
-    h3.style.left = document.documentElement.clientWidth/2 +37 + 'px';
-    h4.style.left = document.documentElement.clientWidth/2 +50 + 'px';
-    h5.style.left = document.documentElement.clientWidth/2 -62 + 'px';
-    h6.style.left = document.documentElement.clientWidth/2 -62 + 'px';
-
-    single_timer.style.top = "-150px";
-    green_score_text.style.top = "500px";
-    red_score_text.style.top = `${400 - red_score_text.offsetHeight/2}px`;
-
-    single_timer.style.left = document.documentElement.clientWidth/2 - single_timer.offsetWidth/2+ 'px';
-    pause_btn.style.top = "550px";
-    pause_btn.style.left = document.documentElement.clientWidth/2 -25 + 'px';
-    reset_btn.style.top = "620px";
-    reset_btn.style.left = document.documentElement.clientWidth/2 -25 + 'px';
-    pause_div.style.visibility = "hidden";
-    game_over_screen.style.visibility = "hidden";
-}
-else {
-    green_score_text.style['position'] = '';
-    red_score_text.style['position'] = '';
-    single_timer.style['position'] = '';
-    pause_btn.getElementsByTagName("h2")[0].style['margin-top'] = "";
-    pause_btn.getElementsByTagName("h2")[0].style['margin-left'] = "";
-    reset_btn.getElementsByTagName("h2")[0].style['margin-top'] = "";
-    reset_btn.getElementsByTagName("h2")[0].style['margin-left'] = "";
-    for (let i=0; i<edges.length; i++){
-        edges[i].getElementsByTagName("h2")[0].style['font-size'] = "";
-    }
-    
-    l2.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-    l2.getElementsByTagName("div")[0].style['margin-right'] = "-10px"
-    
-    l4.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-    l4.getElementsByTagName("div")[0].style['margin-left'] = "15px"
-        
-    l6.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-
-    lb2.getElementsByTagName("div")[0].style['margin-left'] = "-10px"
-    lb2.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-    
-    lb4.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-    lb4.getElementsByTagName("div")[0].style['margin-left'] = "15px"
-        
-    lb6.getElementsByTagName("div")[0].style['margin-top'] = "-40px"
-    l1.style['width'] = "300px"
-    l2.style['width'] = "300px"
-    l3.style['width'] = "300px"
-    l4.style['width'] = "300px"
-    l5.style['width'] = "300px"
-    l6.style['width'] = "300px"
-    lb1.style['width'] = "200px"
-    lb2.style['width'] = "200px"
-    lb3.style['width'] = "200px"
-    lb4.style['width'] = "200px"
-    lb5.style['width'] = "200px"
-    lb6.style['width'] = "200px"
-    lc1.style['width'] = "100px"
-    lc2.style['width'] = "100px"
-    lc3.style['width'] = "100px"
-    lc4.style['width'] = "100px"
-    lc5.style['width'] = "100px"
-    lc6.style['width'] = "100px"
-    h1.style['width'] = "100px"
-    h2.style['width'] = "100px"
-    h3.style['width'] = "100px"
-    h4.style['width'] = "100px"
-    h5.style['width'] = "100px"
-    h6.style['width'] = "100px"
-
-    for (let i =0; i<places.length; i++){
-        places[i].style['width'] = "25px";
-        places[i].style['height'] = "25px"
-    }
-
-    c1.style.top = "87.5px";
-    c2.style.top = "87.5px";
-    c3.style.top = "347.5px";
-    c4.style.top = "600.5px";
-    c5.style.top = "600.5px";
-    c6.style.top = "347.5px";
-    c7.style.top = "175.5px";
-    c8.style.top = "175.5px";
-    c9.style.top = "347.5px";
-    c10.style.top = "520.5px";
-    c11.style.top = "520.5px";
-    c12.style.top = "347.5px";
-
-    c13.style.top = "260.5px";
-    c14.style.top = "260.5px";
-    c15.style.top = "347.5px";
-    c17.style.top = "423.5px";
-    c16.style.top = "423.5px";
-    c18.style.top = "347.5px";
-
-    c1.style.left = document.documentElement.clientWidth/2 + -165 + "px";
-    c2.style.left = document.documentElement.clientWidth/2 + 134 + "px";
-    c3.style.left = document.documentElement.clientWidth/2 + 280 + "px";
-    c4.style.left = document.documentElement.clientWidth/2 + 134 + "px";
-    c5.style.left = document.documentElement.clientWidth/2 -165 + "px";
-    c6.style.left = document.documentElement.clientWidth/2 - 310 + "px";
-
-    c7.style.left = document.documentElement.clientWidth/2 + -112.5 + "px";
-    c8.style.left = document.documentElement.clientWidth/2 + 85.5 + "px";
-    c9.style.left = document.documentElement.clientWidth/2 + 180 + "px";
-    c10.style.left = document.documentElement.clientWidth/2 + 85.5 + "px";
-    c11.style.left = document.documentElement.clientWidth/2 -112.5 + "px";
-    c12.style.left = document.documentElement.clientWidth/2 - 210 + "px";
-
-    c13.style.left = document.documentElement.clientWidth/2 + -60.5 + "px";
-    c14.style.left = document.documentElement.clientWidth/2 + 37.5 + "px";
-    c15.style.left = document.documentElement.clientWidth/2 + 81.5 + "px";
-    c16.style.left = document.documentElement.clientWidth/2 + 37.5 + "px";
-    c17.style.left = document.documentElement.clientWidth/2 -60.5 + "px";
-    c18.style.left = document.documentElement.clientWidth/2 - 107.5 + "px";
-
-    l1.style.top = "100px";
-
-    l1.style.left = document.documentElement.clientWidth/2 - 150 + 'px';
-    l2.style.left = document.documentElement.clientWidth/2 -375 + "px";
-    l3.style.left = document.documentElement.clientWidth/2 + 73.6 + "px";
-    l4.style.left = document.documentElement.clientWidth/2 - 375 + 'px';
-    l5.style.left = document.documentElement.clientWidth/2 + 73.6 + 'px';
-    l6.style.left = document.documentElement.clientWidth/2 - 150 + 'px';
-
-    lb1.style.left =  document.documentElement.clientWidth/2+ -100+ 'px';
-    lb2.style.left =  document.documentElement.clientWidth/2+ -249+ 'px';
-    lb3.style.left =  document.documentElement.clientWidth/2+ 50+ 'px';
-    lb4.style.left =  document.documentElement.clientWidth/2-249+ 'px';
-    lb5.style.left =  document.documentElement.clientWidth/2+50+ 'px';
-    lb6.style.left =  document.documentElement.clientWidth/2+ -100+ 'px';
-
-    lc1.style.left =  document.documentElement.clientWidth/2+ -50+ 'px';
-    lc2.style.left =  document.documentElement.clientWidth/2+ -124+ 'px';
-    lc3.style.left =  document.documentElement.clientWidth/2+ 25+ 'px';
-    lc4.style.left =  document.documentElement.clientWidth/2- 124+ 'px';
-    lc5.style.left =  document.documentElement.clientWidth/2+ 25+ 'px';
-    lc6.style.left =  document.documentElement.clientWidth/2+ -50+ 'px';
-
-    h1.style.left = document.documentElement.clientWidth/2 + -300+ "px";
-    h2.style.left = document.documentElement.clientWidth/2 +74+ "px";
-    h3.style.left = document.documentElement.clientWidth/2 +74+ "px";
-    h4.style.left = document.documentElement.clientWidth/2 +100+ "px";
-    h5.style.left = document.documentElement.clientWidth/2 -125+ "px";
-    h6.style.left = document.documentElement.clientWidth/2 -124+ "px";
-    
-    single_timer.style.left = document.documentElement.clientWidth/2 - single_timer.offsetWidth/2+ 'px';
-
-    pause_btn.style.top = "750px";
-    pause_btn.style.left = document.documentElement.clientWidth/2 -25 + 'px';
-    reset_btn.style.top = "820px";
-    reset_btn.style.left = document.documentElement.clientWidth/2 -25 + 'px';
-    pause_div.style.visibility = "hidden";
-    game_over_screen.style.visibility = "hidden";
-}
 //#endregion
 
 var turn = 0;
@@ -422,14 +111,31 @@ function game_over(){
         winner_text.style['text-shadow']= "0px 0px 10px white";
         final_score.innerHTML = "";
     }
+    p = 0
+    q = 0
+    for (let i=0; i<places.length; i ++){
+        if (!is_blue(places[i])){
+            p += 1
+        }
+        if (!is_red(places[i])){
+            q += 1
+        }
+    }
+    if ((q === 18 && red_titan === 0) || (p === 18 && green_titan === 0)){
+        return true
+    }
     if ((!is_grey(c13) && !is_grey(c14) && !is_grey(c15) && !is_grey(c16) && !is_grey(c17) && !is_grey(c18)) || time === 0 || time < 0){
         game_over_screen.style.visibility = "visible";
         if (is_pause === false){
             var a1 = new Audio('game_over.mp3');
-        a1.play();
+            a1.play();
         }
         is_pause = true;
         return true;
+    }
+    
+    else{
+        return false
     }
 }
 function timer() {
@@ -479,6 +185,18 @@ function player_timer() {
 }
 function is_grey(c){
     if (window.getComputedStyle(c).getPropertyValue("background-color") === "rgb(142, 142, 142)") {
+        return true;
+    }
+    else {return false}
+}
+function is_blue(c){
+    if (window.getComputedStyle(c).getPropertyValue("background-color") === "rgb(6, 151, 255)") {
+        return true;
+    }
+    else {return false}
+}
+function is_red(c){
+    if (window.getComputedStyle(c).getPropertyValue("background-color") === "rgb(255, 44, 44)") {
         return true;
     }
     else {return false}
@@ -1013,7 +731,7 @@ function update_score() {
         }
     }
 
-
+    revoke_controlled_edge();
     green_score_text.innerHTML = `Blue: ${green_score}`;
     red_score_text.innerHTML = `Red: ${red_score}`;
 
@@ -1111,7 +829,7 @@ function check_hex() {
     if (!is_grey(c1) && !is_grey(c2) && !is_grey(c3) && !is_grey(c4) && !is_grey(c5) && !is_grey(c6)){
         is_hex2 = true;
     }
-    if (!is_grey(c11) && !is_grey(c12) && !is_grey(c12) && !is_grey(c14) && !is_grey(c15) && !is_grey(c16)){
+    if (!is_grey(c7) && !is_grey(c8) && !is_grey(c9) && !is_grey(c10) && !is_grey(c11) && !is_grey(c12)){
         is_hex3 = true;
     }
 }
@@ -1142,6 +860,7 @@ update_turn()
 
 function on_click(c){
     if (!game_over()){
+        check_hex()
         if (turn===0){
             if (window.getComputedStyle(c).getPropertyValue("background-color") === "rgb(142, 142, 142)"){
                 if (select === 0 &&  green_titan >0){
@@ -1206,22 +925,22 @@ function on_click(c){
                 }
                 else {
                     if (selected_ele.id === "c1" && (c.id == "c2" || c.id == "c6") || 
-                    (selected_ele.id === "c2" && (c.id === "c1" || c.id === "c3" || c.id === "c8")) || 
+                    (selected_ele.id === "c2" && (c.id === "c1" || c.id === "c3" || (c.id === "c8" && is_hex2))) || 
                     (selected_ele.id === "c3" && (c.id === "c2" || c.id === "c4")) || 
-                    (selected_ele.id === "c4" && (c.id === "c3" || c.id === "c5" || c.id === "c10")) || 
+                    (selected_ele.id === "c4" && (c.id === "c3" || c.id === "c5" || (c.id === "c10" && is_hex2))) || 
                     (selected_ele.id === "c5" && (c.id === "c4" || c.id === "c6")) || 
-                    (selected_ele.id === "c6" && (c.id === "c5" || c.id === "c1" || c.id === "c12")) || 
-                    (selected_ele.id === "c7" && (c.id === "c8" || c.id === "c12" || c.id === "c13")) || 
+                    (selected_ele.id === "c6" && (c.id === "c5" || c.id === "c1" || (c.id === "c12" && is_hex2))) || 
+                    (selected_ele.id === "c7" && (c.id === "c8" || c.id === "c12" || (c.id === "c13" && is_hex3))) || 
                     (selected_ele.id === "c8" && (c.id === "c7" || c.id === "c9" || c.id === "c2")) || 
-                    (selected_ele.id === "c9" && (c.id === "c8" || c.id === "c10" || c.id === "c15")) || 
+                    (selected_ele.id === "c9" && (c.id === "c8" || c.id === "c10" || (c.id === "c15" && is_hex3))) || 
                     (selected_ele.id === "c10" && (c.id === "c9" || c.id === "c11" || c.id === "c4")) || 
-                    (selected_ele.id === "c11" && (c.id === "c10" || c.id === "c12" || c.id === "c17")) || 
+                    (selected_ele.id === "c11" && (c.id === "c10" || c.id === "c12" || (c.id === "c17" && is_hex3))) || 
                     (selected_ele.id === "c12" && (c.id === "c11" || c.id === "c7" || c.id === "c6")) ||
                     (selected_ele.id === "c13" && (c.id === "c14" || c.id === "c18" || c.id === "c7")) || 
-                    (selected_ele.id === "c14" && (c.id === "c13" || c.id === "c15")) || 
-                    (selected_ele.id === "c15" && (c.id === "c14" || c.id === "c16" || c.id === "c9")) || 
-                    (selected_ele.id === "c16" && (c.id === "c15" || c.id === "c17")) || 
-                    (selected_ele.id === "c17" && (c.id === "c16" || c.id === "c18" || c.id === "c11")) || 
+                    (selected_ele.id === "c14" && (c.id === "c13" || c.id === "c15" && is_hex3)) || 
+                    (selected_ele.id === "c15" && (c.id === "c14" || c.id === "c16" || c.id === "c9" )) || 
+                    (selected_ele.id === "c16" && ((c.id === "c15" || c.id === "c17") && is_hex3)) || 
+                    (selected_ele.id === "c17" && (c.id === "c16" || c.id === "c18"  || c.id === "c11")) || 
                     (selected_ele.id === "c18" && (c.id === "c17" || c.id === "c13"))){
                         ele = document.getElementById("turn");
                         ele.innerHTML = "Red's Turn";
@@ -1311,22 +1030,22 @@ function on_click(c){
                 }
                 else {
                     if (selected_ele.id === "c1" && (c.id == "c2" || c.id == "c6") || 
-                    (selected_ele.id === "c2" && (c.id === "c1" || c.id === "c3" || c.id === "c8")) || 
+                    (selected_ele.id === "c2" && (c.id === "c1" || c.id === "c3" || (c.id === "c8" && is_hex2))) || 
                     (selected_ele.id === "c3" && (c.id === "c2" || c.id === "c4")) || 
-                    (selected_ele.id === "c4" && (c.id === "c3" || c.id === "c5" || c.id === "c10")) || 
+                    (selected_ele.id === "c4" && (c.id === "c3" || c.id === "c5" || (c.id === "c10" && is_hex2))) || 
                     (selected_ele.id === "c5" && (c.id === "c4" || c.id === "c6")) || 
-                    (selected_ele.id === "c6" && (c.id === "c5" || c.id === "c1" || c.id === "c12")) || 
-                    (selected_ele.id === "c7" && (c.id === "c8" || c.id === "c12" || c.id === "c13")) || 
+                    (selected_ele.id === "c6" && (c.id === "c5" || c.id === "c1" || (c.id === "c12" && is_hex2))) || 
+                    (selected_ele.id === "c7" && (c.id === "c8" || c.id === "c12" || (c.id === "c13" && is_hex3))) || 
                     (selected_ele.id === "c8" && (c.id === "c7" || c.id === "c9" || c.id === "c2")) || 
-                    (selected_ele.id === "c9" && (c.id === "c8" || c.id === "c10" || c.id === "c15")) || 
+                    (selected_ele.id === "c9" && (c.id === "c8" || c.id === "c10" || (c.id === "c15" && is_hex3))) || 
                     (selected_ele.id === "c10" && (c.id === "c9" || c.id === "c11" || c.id === "c4")) || 
-                    (selected_ele.id === "c11" && (c.id === "c10" || c.id === "c12" || c.id === "c17")) || 
+                    (selected_ele.id === "c11" && (c.id === "c10" || c.id === "c12" || (c.id === "c17" && is_hex3))) || 
                     (selected_ele.id === "c12" && (c.id === "c11" || c.id === "c7" || c.id === "c6")) ||
                     (selected_ele.id === "c13" && (c.id === "c14" || c.id === "c18" || c.id === "c7")) || 
-                    (selected_ele.id === "c14" && (c.id === "c13" || c.id === "c15")) || 
-                    (selected_ele.id === "c15" && (c.id === "c14" || c.id === "c16" || c.id === "c9")) || 
-                    (selected_ele.id === "c16" && (c.id === "c15" || c.id === "c17")) || 
-                    (selected_ele.id === "c17" && (c.id === "c16" || c.id === "c18" || c.id === "c11")) || 
+                    (selected_ele.id === "c14" && (c.id === "c13" || c.id === "c15" && is_hex3)) || 
+                    (selected_ele.id === "c15" && (c.id === "c14" || c.id === "c16" || c.id === "c9" )) || 
+                    (selected_ele.id === "c16" && ((c.id === "c15" || c.id === "c17") && is_hex3)) || 
+                    (selected_ele.id === "c17" && (c.id === "c16" || c.id === "c18"  || c.id === "c11")) || 
                     (selected_ele.id === "c18" && (c.id === "c17" || c.id === "c13"))){
                         ele = document.getElementById("turn");
                         ele.innerHTML = "Blue's Turn";
@@ -1352,6 +1071,7 @@ function on_click(c){
                 select = 1;
             }
         }
+        check_hex()
     }
     else {
         game_over();
@@ -1370,14 +1090,24 @@ function on_hover(c){
 
 function update(){
     if (document.documentElement.clientWidth < 1200){
+
         countdown.style['font-size'] = "50px";
         green_score_text.style['position'] = 'absolute';
         red_score_text.style['position'] = 'relative';
         single_timer.style['position'] = 'absolute';
         pause_btn.getElementsByTagName("h2")[0].style['margin-top'] = "12px";
         pause_btn.getElementsByTagName("h2")[0].style['margin-left'] = "-2px";
-        reset_btn.getElementsByTagName("h2")[0].style['margin-top'] = "-8px";
-        reset_btn.getElementsByTagName("h2")[0].style['margin-left'] = "3px";
+        if (navigator.userAgent.toLowerCase().indexOf("android") > -1){
+            
+        }
+        else if(navigator.userAgent.indexOf("Chrome") > -1){
+            reset_btn.getElementsByTagName("h2")[0].style['margin-top'] = "4px";
+            reset_btn.getElementsByTagName("h2")[0].style['margin-left'] = "2px";
+        }
+        else{
+            reset_btn.getElementsByTagName("h2")[0].style['margin-top'] = "-8px";
+            reset_btn.getElementsByTagName("h2")[0].style['margin-left'] = "3px";
+        }
         for (let i=0; i<edges.length; i++){
             edges[i].getElementsByTagName("h2")[0].style['font-size'] = "17px";
         }
@@ -1568,8 +1298,17 @@ function update(){
         countdown.style['font-size'] = "50px"
         pause_btn.getElementsByTagName("h2")[0].style['margin-top'] = "";
         pause_btn.getElementsByTagName("h2")[0].style['margin-left'] = "";
-        reset_btn.getElementsByTagName("h2")[0].style['margin-top'] = "";
-        reset_btn.getElementsByTagName("h2")[0].style['margin-left'] = "";
+        if(navigator.userAgent.indexOf("Chrome") > -1){
+            reset_btn.getElementsByTagName("h2")[0].style['margin-top'] = "4px";
+            reset_btn.getElementsByTagName("h2")[0].style['margin-left'] = "2px";
+        }
+
+
+        else{
+            reset_btn.getElementsByTagName("h2")[0].style['margin-top'] = "";
+            reset_btn.getElementsByTagName("h2")[0].style['margin-left'] = "";
+        }
+        
         for (let i=0; i<edges.length; i++){
             edges[i].getElementsByTagName("h2")[0].style['font-size'] = "";
         }
@@ -1765,6 +1504,7 @@ function update(){
         pause_div.style.visibility = "hidden"
     }
 }
+
 update()
 function resize_pause() {
     pause_div.style['height'] = "120%"
