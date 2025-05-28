@@ -413,7 +413,7 @@ function generate_world() {
             }
             n+=1
             for (let k=0; k<key_places[l].length;k++){
-                ctx.fillStyle = "rgb(255, 123, 0)"
+                ctx.fillStyle = "rgb(255, 0, 238)"
                 ctx.beginPath();
                 ctx.arc(world_x+i+key_places[l][k][0], world_y+j+key_places[l][k][1], 10, 0, 2*Math.PI)
                 ctx.fill();
