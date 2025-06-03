@@ -56,7 +56,7 @@ world.addEventListener("mousedown", (e) => {
         y:player.y,
         vx,
         vy,
-        radius:5,
+        radius:7.5,
         life:300,
         width: 10
     })
@@ -477,10 +477,12 @@ function update() {
         if(key_len < 20){
             generate_keys()
         }
-        if(n_keys >= shards_arr[0]){
-            n_keys -= shards_arr[0]
-            shards_arr.shift()
-            shards += 1
+        if (future_player.x >= 5 && future_player.x <= 50 && future_player.y >=0 && future_player.y <= 50){
+            if(n_keys >= shards_arr[0]){
+                n_keys -= shards_arr[0]
+                shards_arr.shift()
+                shards += 1
+            }
         }
         d = Math.sqrt((player.x-(world_x+50+rand_i*399+buildings[m][0][0]+30))**2 + (player.y-(world_y+50+rand_j*399+buildings[m][0][1]+30))**2)
         if(player.health <=0 || system_health >=100 || system_health < 20) {
